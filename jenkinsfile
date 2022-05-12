@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
         PRIVATE_KEY            = credentials('key_ssh_ansible')
-        DOCKER_IMAGE           = "duyenlv1198/nginx_2"
+        DOCKER_IMAGE           = "duyenlv1198/nginx_final"
     }
     stages {
         stage('build') {
