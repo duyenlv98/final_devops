@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+  app:
+    image: duyenlv1198/nginx_2:latest
+    ports:
+      - "80:80"
