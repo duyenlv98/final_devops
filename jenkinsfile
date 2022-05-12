@@ -48,14 +48,4 @@ pipeline {
             }
             }
         }
-        }
-    
-    post { 
-        success {
-            echo "SUCCESSFULL"
-        }
-        failure {
-            echo "FAILED"
-        }
-    }
 }
