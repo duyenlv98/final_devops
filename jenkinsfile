@@ -14,7 +14,6 @@ pipeline {
             }
             steps {
                 sh '''
-                    ./docker_user.sh
                     docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . 
                     docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest
                     docker image ls | grep ${DOCKER_IMAGE}'''
