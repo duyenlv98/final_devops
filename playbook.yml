@@ -1,15 +1,8 @@
 ---
-- hosts: server
+- hosts: deploy
   remote_user: ubuntu
   become: yes
   tasks:
-    - name: Install Docker
-      shell: |
-          curl -sSL https://get.docker.com/ | sudo sh
-          apt-get install docker-compose -y
-          chmod +x /usr/local/bin/docker-compose
-          usermod -a -G docker ubuntu
-          chmod 777 /var/run/docker.sock
     - name: Login DockerHub
       shell: docker login -u "{{DOCKER_USERNAME}}" -p "{{DOCKER_PASSWORD}}"
     - name: Copy file
