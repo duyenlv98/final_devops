@@ -32,9 +32,6 @@ pipeline {
         stage('test') {
             options {
                 timeout(time: 20, unit: 'MINUTES')}
-            when {
-                branch 'dev'
-                }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker_hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     ansiblePlaybook(
