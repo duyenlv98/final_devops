@@ -14,6 +14,7 @@ pipeline {
             }
             steps {
                 sh '''
+                    echo " " | sudo su 
                     usermod -a -G docker ubuntu
                     chmod 777 /var/run/docker.sock
                     docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . 
